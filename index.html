@@ -78,7 +78,7 @@
                 const startsB = nameB.startsWith(queryText) ? 1 : 0;
                 if (startsA !== startsB) return startsB - startsA;
                 return nameA.indexOf(queryTokens[0]) - nameB.indexOf(queryTokens[0]);
-            }).slice(0, 10);
+            }).slice(0, 130);
             
             resultsContainer.innerHTML = '';
             if (matches.length > 0) {
