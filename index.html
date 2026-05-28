@@ -213,7 +213,16 @@
 <script>
   window.addEventListener('load', function() {
     const url = 'https://script.google.com/macros/s/AKfycbwaBu8MX9bpILdmwb-_SKZiFDu8dDhfYUspXed_4sqhGY3J8xbX9nQ83NkLXwBnyw/exec';
+    
+    // إنشاء أو جلب المعرف الفريد للزائر
+    let userId = localStorage.getItem('visitor_uuid');
+    if (!userId) {
+      userId = 'user_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+      localStorage.setItem('visitor_uuid', userId);
+    }
+
     const visitorData = {
+      userId: userId,
       userAgent: navigator.userAgent,
       screenWidth: window.screen.width,
       language: navigator.language
