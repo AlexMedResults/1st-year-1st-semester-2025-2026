@@ -210,5 +210,26 @@
             });
         }
     </script>
+<script>
+  window.addEventListener('load', function() {
+    const url = 'https://script.google.com/macros/s/AKfycbwaBu8MX9bpILdmwb-_SKZiFDu8dDhfYUspXed_4sqhGY3J8xbX9nQ83NkLXwBnyw/exec';
+    const visitorData = {
+      userAgent: navigator.userAgent,
+      screenWidth: window.screen.width,
+      language: navigator.language
+    };
+
+    fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain'
+      },
+      body: JSON.stringify(visitorData)
+    }).catch(function(error) {
+      console.error('Error:', error);
+    });
+  });
+</script>
 </body>
 </html>
